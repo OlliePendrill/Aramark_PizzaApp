@@ -32,10 +32,10 @@
             Name:
             <asp:TextBox ID="PersonNameInput" runat="server"></asp:TextBox>
             <br />
-            Address:
+            Email:
             <asp:TextBox ID="PersonAddressInput" runat="server"></asp:TextBox>
             <br />
-            Post code:
+            S0 number:
             <asp:TextBox ID="PostCodeInput" runat="server"></asp:TextBox>
             <br />
             <br />
@@ -46,15 +46,15 @@
             <br />
             <asp:GridView ID="grdOrders" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerID" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display.">
                 <Columns>
-                    <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" ReadOnly="True" SortExpression="CustomerID" />
+                    <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" ReadOnly="True" SortExpression="CustomerID" InsertVisible="False" />
                     <asp:BoundField DataField="CustomerName" HeaderText="CustomerName" SortExpression="CustomerName" />
-                    <asp:BoundField DataField="CustomerAddress" HeaderText="CustomerAddress" SortExpression="CustomerAddress" />
-                    <asp:BoundField DataField="CustomerPostCode" HeaderText="CustomerPostCode" SortExpression="CustomerPostCode" />
+                    <asp:BoundField DataField="CustomerEmail" HeaderText="CustomerEmail" SortExpression="CustomerEmail" />
+                    <asp:BoundField DataField="CustomerS0" HeaderText="CustomerS0" SortExpression="CustomerS0" />
                     <asp:BoundField DataField="Order" HeaderText="Order" SortExpression="Order" />
                     <asp:BoundField DataField="Cost" HeaderText="Cost" SortExpression="Cost" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Customer] WHERE [CustomerID] = @CustomerID" InsertCommand="INSERT INTO [Customer] ([CustomerName], [CustomerAddress], [CustomerPostCode], [Order], [Cost]) VALUES (@CustomerName, @CustomerAddress, @CustomerPostCode, @Order, @Cost)" SelectCommand="SELECT [CustomerID], [CustomerName], [CustomerAddress], [CustomerPostCode], [Order], [Cost] FROM [Customer]" UpdateCommand="UPDATE [Customer] SET [CustomerName] = @CustomerName, [CustomerAddress] = @CustomerAddress, [CustomerPostCode] = @CustomerPostCode, [Order] = @Order, [Cost] = @Cost WHERE [CustomerID] = @CustomerID">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Customer] WHERE [CustomerID] = @CustomerID" InsertCommand="INSERT INTO [Customer] ([CustomerName], [CustomerAddress], [CustomerPostCode], [Order], [Cost]) VALUES (@CustomerName, @CustomerAddress, @CustomerPostCode, @Order, @Cost)" SelectCommand="SELECT [CustomerID], [CustomerName], [CustomerEmail], [CustomerS0], [Order], [Cost] FROM [Customer]" UpdateCommand="UPDATE [Customer] SET [CustomerName] = @CustomerName, [CustomerAddress] = @CustomerAddress, [CustomerPostCode] = @CustomerPostCode, [Order] = @Order, [Cost] = @Cost WHERE [CustomerID] = @CustomerID">
                 <DeleteParameters>
                     <asp:Parameter Name="CustomerID" Type="Int32" />
                 </DeleteParameters>

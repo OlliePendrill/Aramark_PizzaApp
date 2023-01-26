@@ -11,13 +11,21 @@
           </Key>
           <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CustomerName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CustomerAddress" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CustomerPostCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerS0" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Order" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Cost" Type="smallmoney" Nullable="false" />
         </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="20" />
+        </EntityType>
         <EntityContainer Name="Pizza_ordersModelStoreContainer">
           <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -25,6 +33,7 @@
       <Schema Namespace="Pizza_ordersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Pizza_ordersEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="customers" EntityType="Pizza_ordersModel.customer" />
+          <EntitySet Name="Logins" EntityType="Pizza_ordersModel.Login" />
         </EntityContainer>
         <EntityType Name="customer">
           <Key>
@@ -32,10 +41,17 @@
           </Key>
           <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerPostCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerS0" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Order" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -48,10 +64,18 @@
               <MappingFragment StoreEntitySet="customer">
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Order" ColumnName="Order" />
-                <ScalarProperty Name="CustomerPostCode" ColumnName="CustomerPostCode" />
-                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerS0" ColumnName="CustomerS0" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="Pizza_ordersModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

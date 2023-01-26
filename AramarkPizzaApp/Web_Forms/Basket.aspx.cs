@@ -29,8 +29,8 @@ namespace AramarkPizzaApp
             var newCustomer = new customer();
 
             newCustomer.CustomerName = PersonNameInput.Text;
-            newCustomer.CustomerAddress = PersonAddressInput.Text;
-            newCustomer.CustomerPostCode = PostCodeInput.Text;
+            newCustomer.CustomerEmail = PersonAddressInput.Text;
+            newCustomer.CustomerS0 = PostCodeInput.Text;
             newCustomer.Cost = decimal.Parse(resultLabelTotalCost.Text);
             newCustomer.Order = resultLabel.Text;
 
