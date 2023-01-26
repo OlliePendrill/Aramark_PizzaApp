@@ -37,6 +37,8 @@ namespace AramarkPizzaApp
             db.customers.Add(newCustomer);
             db.SaveChanges();
             grdOrders.DataBind();
+
+            Response.Redirect("ThankYou.aspx");
         }
 
         protected void clearB_Click(object sender, EventArgs e)

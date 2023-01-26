@@ -23,6 +23,8 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
             <br />
             <asp:Button ID="homeButton" runat="server" OnClick="homeButton_Click" Text="Return to home screen" />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Exit" />
         </div>
     </form>
 </body>
