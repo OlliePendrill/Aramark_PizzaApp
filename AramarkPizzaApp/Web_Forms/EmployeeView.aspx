@@ -24,6 +24,7 @@
             <br />
             <asp:Button ID="homeButton" runat="server" OnClick="homeButton_Click" Text="Return to home screen" />
             <br />
+            <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Exit" />
         </div>
     </form>

@@ -26,6 +26,7 @@
             <br />
             <asp:Button ID="homeBack" runat="server" OnClick="homeBack_Click" Text="Return to home page" />
             <br />
+            <br />
             <asp:Button ID="basketButton" runat="server" OnClick="basketButton_Click" Text="View basket" Width="183px" />
             <br />
         </div>
