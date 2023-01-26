@@ -11,6 +11,8 @@
         <div>
             THANK YOU FOR YOUR ORDER<br />
             <br />
+            Available for collection soon.<br />
+            <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Return to home" />
             <br />
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Exit" />
