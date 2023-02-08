@@ -24,6 +24,12 @@
             <asp:Button ID="MeatButton" runat="server" Height="26px" OnClick="MeatButton_Click" Text="Add Pepperoni pizza to basket" Width="201px" />
             <br />
             <br />
+            <asp:Image ID="Image3" runat="server" Height="181px" ImageUrl="~/pizzapictures/istockphoto-185072125-612x612.jpg" Width="228px" />
+            <br />
+            Water £1.00<br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Water to basket" />
+            <br />
+            <br />
             <asp:Button ID="homeBack" runat="server" OnClick="homeBack_Click" Text="Return to home page" />
             <br />
             <br />

@@ -47,5 +47,17 @@ namespace AramarkPizzaApp
         {
             Response.Redirect("Default.aspx");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string details = Session["orderDetails"].ToString();
+            details += " Water";
+            Session["orderDetails"] = details.ToString();
+
+            string costString = Session["orderTotal"].ToString();
+            double costs = double.Parse(costString);
+            costs += 1.00;
+            Session["orderTotal"] = costs.ToString();
+        }
     }
 }

@@ -79,6 +79,7 @@
     <Content Include="App_Data\Pizza_orders_log.ldf">
       <DependentUpon>Pizza_orders.mdf</DependentUpon>
     </Content>
+    <Content Include="pizzapictures\istockphoto-185072125-612x612.jpg" />
     <Content Include="Web_Forms\ThankYou.aspx" />
     <Content Include="Web_Forms\EmployeeLogin.aspx" />
     <Content Include="Web_Forms\Basket.aspx" />
